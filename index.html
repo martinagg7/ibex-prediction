@@ -2,17 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>BankStock AI — Selección</title>
+  <title>BankStock AI</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 
 <body>
   <div class="top-row">
     <!-- BLOQUE 1: SELECCIONAR BANCO -->
-    <div>
+    <div class="bank-section">
       <h2>Seleccionar banco</h2>
       <div class="bank-selector">
-        <div class="bank-card bbva active" id="bbvaCard" onclick="selectBank('bbva')">
+        <div class="bank-card bbva active" id="bbvaCard" data-bank="bbva">
           <div class="bank-icon">🏦</div>
           <div class="bank-info">
             <h3>BBVA</h3>
@@ -20,7 +21,7 @@
           </div>
         </div>
 
-        <div class="bank-card santander" id="santanderCard" onclick="selectBank('santander')">
+        <div class="bank-card santander" id="santanderCard" data-bank="santander">
           <div class="bank-icon">🏛️</div>
           <div class="bank-info">
             <h3>Santander</h3>
@@ -32,39 +33,22 @@
 
     <!-- BLOQUE 2: INTERVALO TEMPORAL -->
     <div class="interval-block">
-      <div class="interval-title">📅 Intervalo temporal</div>
+      <div class="interval-title">
+        <span class="icon">📅</span> Intervalo temporal
+      </div>
       <div class="interval-selector">
-        <div class="interval-btn active" onclick="selectInterval(this)">7 días<br><small>Una semana</small></div>
-        <div class="interval-btn" onclick="selectInterval(this)">15 días<br><small>Dos semanas</small></div>
-        <div class="interval-btn" onclick="selectInterval(this)">30 días<br><small>Un mes</small></div>
+        <div class="interval-btn active" data-days="7">7 días<br><small>Una semana</small></div>
+        <div class="interval-btn" data-days="15">15 días<br><small>Dos semanas</small></div>
+        <div class="interval-btn" data-days="30">30 días<br><small>Un mes</small></div>
+        <div class="interval-btn" data-days="365">1 año<br><small>365 días</small></div>
       </div>
     </div>
   </div>
 
-  <!-- Contenidos dinámicos -->
-  <div id="bbvaContent" class="content active">
-    <h3> Sección BBVA</h3>
-    <p>Datos y predicciones del modelo LSTM para BBVA.</p>
+  <!-- CONTENIDO PRINCIPAL (donde irá el gráfico) -->
+  <div id="chart-container" class="chart-card">
+    <h3 id="chart-title">📈 Evolución de BBVA (últimos 7 días)</h3>
+    <canvas id="chartCanvas"></canvas>
   </div>
-
-  <div id="santanderContent" class="content">
-    <h3> Sección Santander</h3>
-    <p>Datos y predicciones del modelo GRU para Santander.</p>
-  </div>
-
-  <script>
-    function selectBank(bank) {
-      document.querySelectorAll('.bank-card').forEach(card => card.classList.remove('active'));
-      document.getElementById(bank + 'Card').classList.add('active');
-
-      document.querySelectorAll('.content').forEach(div => div.classList.remove('active'));
-      document.getElementById(bank + 'Content').classList.add('active');
-    }
-
-    function selectInterval(btn) {
-      document.querySelectorAll('.interval-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-  </script>
 </body>
 </html>
