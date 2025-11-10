@@ -1,28 +1,19 @@
-/* === ESTILOS GLOBALES === */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #0b132b;
-  color: #f4f4f4;
-  margin: 0;
-  padding: 40px;
-}
-
-h2 {
-  color: #64dfdf;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-
 /* === CONTENEDOR PRINCIPAL === */
-.header-container {
+.top-bar {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 60px;
+  gap: 40px;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 /* === BLOQUE BANCO === */
+.bank-section h2 {
+  color: #64dfdf;
+  margin-bottom: 18px;
+}
+
 .bank-selector {
   display: flex;
   gap: 20px;
@@ -34,11 +25,12 @@ h2 {
   gap: 15px;
   background: #10182a;
   border-radius: 12px;
-  padding: 18px 25px;
+  padding: 20px 25px;
   cursor: pointer;
   border: 2px solid transparent;
   width: 260px;
   transition: all 0.25s ease;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.05);
 }
 
 .bank-card:hover {
@@ -49,6 +41,7 @@ h2 {
 .bank-card.active {
   border-color: #00e0ff;
   background: linear-gradient(180deg, #10182a 0%, #0d1b3d 100%);
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.15);
 }
 
 .bank-icon {
@@ -59,7 +52,6 @@ h2 {
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 22px;
 }
 
 .bank-icon.blue {
@@ -70,23 +62,11 @@ h2 {
   background: #ef233c;
 }
 
-.bank-info h3 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.bank-info p {
-  margin: 2px 0 0;
-  font-size: 14px;
-  color: #9baec8;
-}
-
-/* === BLOQUE INTERVALO === */
-.interval-block {
+/* === INTERVALO === */
+.interval-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 10px;
 }
 
@@ -94,18 +74,13 @@ h2 {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #c3cfe2;
+  color: #a5b4d0;
   font-size: 15px;
-}
-
-.material-symbols-rounded {
-  font-size: 20px;
-  vertical-align: middle;
 }
 
 .interval-selector {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -114,10 +89,10 @@ h2 {
   border-radius: 12px;
   padding: 10px 25px;
   cursor: pointer;
-  transition: all 0.3s ease;
   border: 2px solid transparent;
   text-align: center;
   min-width: 95px;
+  transition: all 0.3s ease;
 }
 
 .interval-btn.active {
@@ -130,18 +105,20 @@ h2 {
   font-size: 12px;
 }
 
-/* === SUBTÍTULO (debajo) === */
-.subtitle {
-  margin-top: 40px;
-  font-weight: 600;
-  color: #f4f4f4;
+/* === ICONOS === */
+.material-symbols-rounded {
+  font-size: 20px;
+  vertical-align: middle;
 }
 
 /* === RESPONSIVO === */
 @media (max-width: 900px) {
-  .header-container {
+  .top-bar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 40px;
+    gap: 25px;
+  }
+  .interval-section {
+    align-items: flex-start;
   }
 }

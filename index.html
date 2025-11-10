@@ -1,63 +1,41 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Predicción BBVA 📈</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b132b;
-      color: #f4f4f4;
-      text-align: center;
-      margin-top: 50px;
-    }
-    button {
-      background: #1c2541;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    button:hover {
-      background: #3a506b;
-    }
-    pre {
-      background: #1c2541;
-      padding: 15px;
-      border-radius: 8px;
-      width: 70%;
-      margin: 20px auto;
-      text-align: left;
-    }
-  </style>
-</head>
-<body>
-  <h1>💶 Predicciones del modelo BBVA</h1>
-  <button onclick="predecir()">📊 Obtener predicción</button>
-  <pre id="resultado">Esperando predicción...</pre>
+<div class="top-bar">
+  <!-- BLOQUE IZQUIERDA: BANCOS -->
+  <div class="bank-section">
+    <h2>Seleccionar banco</h2>
+    <div class="bank-selector">
+      <div class="bank-card bbva active" id="bbvaCard" onclick="selectBank('bbva')">
+        <div class="bank-icon blue">
+          <span class="material-symbols-rounded">account_balance</span>
+        </div>
+        <div class="bank-info">
+          <h3>BBVA</h3>
+          <p>Banco Bilbao Vizcaya Argentaria</p>
+        </div>
+      </div>
 
-  <script>
-    async function predecir() {
-      const url = "https://martinagg-bank-stock-api.hf.space/predict/bbva";
-      document.getElementById("resultado").textContent = "Cargando...";
+      <div class="bank-card santander" id="santanderCard" onclick="selectBank('santander')">
+        <div class="bank-icon red">
+          <span class="material-symbols-rounded">account_balance</span>
+        </div>
+        <div class="bank-info">
+          <h3>Santander</h3>
+          <p>Banco Santander</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      try {
-        const resp = await fetch(url, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ n_future: 3 })
-        });
-
-        const data = await resp.json();
-        document.getElementById("resultado").textContent =
-          JSON.stringify(data, null, 2);
-      } catch (error) {
-        document.getElementById("resultado").textContent =
-          "⚠️ Error al conectar con la API\n" + error;
-      }
-    }
-  </script>
-</body>
-</html>
+  <!-- BLOQUE DERECHA: INTERVALO -->
+  <div class="interval-section">
+    <div class="interval-title">
+      <span class="material-symbols-rounded">calendar_month</span>
+      <span>Intervalo temporal</span>
+    </div>
+    <div class="interval-selector">
+      <div class="interval-btn active" onclick="selectInterval(this)">7 días<br><small>Una semana</small></div>
+      <div class="interval-btn" onclick="selectInterval(this)">15 días<br><small>Dos semanas</small></div>
+      <div class="interval-btn" onclick="selectInterval(this)">30 días<br><small>Un mes</small></div>
+      <div class="interval-btn" onclick="selectInterval(this)">1 año<br><small>365 días</small></div>
+    </div>
+  </div>
+</div>
