@@ -2,18 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>BankStock AI — Selección</title>
-  <link rel="stylesheet" href="style.css">
+  <title>BankStock AI — Predicciones</title>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="header-container">
+  <div class="top-bar">
     <!-- BLOQUE: SELECCIONAR BANCO -->
-    <div class="bank-block">
+    <div class="bank-section">
       <h2>Seleccionar banco</h2>
       <div class="bank-selector">
-        <div class="bank-card bbva active" id="bbvaCard" data-bank="bbva">
+        <div class="bank-card bbva active" id="bbvaCard" onclick="selectBank('bbva')">
           <div class="bank-icon blue">
             <span class="material-symbols-rounded">account_balance</span>
           </div>
@@ -23,7 +23,7 @@
           </div>
         </div>
 
-        <div class="bank-card santander" id="santanderCard" data-bank="santander">
+        <div class="bank-card santander" id="santanderCard" onclick="selectBank('santander')">
           <div class="bank-icon red">
             <span class="material-symbols-rounded">account_balance</span>
           </div>
@@ -35,22 +35,25 @@
       </div>
     </div>
 
-    <!-- BLOQUE: INTERVALO TEMPORAL -->
-    <div class="interval-block">
+    <!-- BLOQUE: INTERVALO -->
+    <div class="interval-section">
       <div class="interval-title">
         <span class="material-symbols-rounded">calendar_month</span>
         <span>Intervalo temporal</span>
       </div>
-
       <div class="interval-selector">
-        <div class="interval-btn active" data-days="7">7 días<br><small>Una semana</small></div>
-        <div class="interval-btn" data-days="15">15 días<br><small>Dos semanas</small></div>
-        <div class="interval-btn" data-days="30">30 días<br><small>Un mes</small></div>
-        <div class="interval-btn" data-days="365">1 año<br><small>365 días</small></div>
+        <div class="interval-btn active" onclick="selectInterval(this)">7 días<br><small>Una semana</small></div>
+        <div class="interval-btn" onclick="selectInterval(this)">15 días<br><small>Dos semanas</small></div>
+        <div class="interval-btn" onclick="selectInterval(this)">30 días<br><small>Un mes</small></div>
+        <div class="interval-btn" onclick="selectInterval(this)">1 año<br><small>365 días</small></div>
       </div>
     </div>
   </div>
 
-  <h3 class="subtitle">📈 Evolución de BBVA (últimos 7 días)</h3>
+  <h2 id="titulo">💶 Predicciones del modelo BBVA</h2>
+  <button id="predictBtn">📊 Obtener predicción</button>
+  <pre id="resultado">Esperando predicción...</pre>
+
+  <script src="script.js"></script>
 </body>
 </html>
