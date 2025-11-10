@@ -1,5 +1,8 @@
 /* === ESTILOS GLOBALES === */
 body {
+  background: red !important;
+}
+body {
   font-family: 'Segoe UI', sans-serif;
   background: #0b132b;
   color: #f4f4f4;
