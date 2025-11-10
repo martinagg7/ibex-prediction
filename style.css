@@ -1,3 +1,4 @@
+/* === ESTRUCTURA PRINCIPAL === */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #0b132b;
@@ -6,7 +7,8 @@ body {
   padding: 40px;
 }
 
-.top-row {
+/* Contenedor general superior */
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -14,13 +16,13 @@ body {
   gap: 40px;
 }
 
+/* === BLOQUE BANCO === */
 h2 {
   color: #64dfdf;
   font-weight: 500;
   margin-bottom: 20px;
 }
 
-/* === TARJETAS DE BANCO === */
 .bank-selector {
   display: flex;
   gap: 20px;
@@ -33,7 +35,7 @@ h2 {
   gap: 15px;
   background: #10182a;
   border-radius: 12px;
-  padding: 20px 25px;
+  padding: 18px 25px;
   cursor: pointer;
   border: 2px solid transparent;
   width: 260px;
@@ -50,14 +52,6 @@ h2 {
   background: linear-gradient(180deg, #10182a 0%, #0d1b3d 100%);
 }
 
-.bbva .bank-icon {
-  background: #00b4d8;
-}
-
-.santander .bank-icon {
-  background: #ef233c;
-}
-
 .bank-icon {
   width: 40px;
   height: 40px;
@@ -65,23 +59,38 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  color: white;
+  font-size: 24px;
 }
 
-.bank-info p {
-  margin: 0;
-  font-size: 13px;
-  color: #9baec8;
+.bank-icon.blue {
+  background: #00b4d8;
 }
 
-/* === INTERVALOS === */
+.bank-icon.red {
+  background: #ef233c;
+}
+
+/* === BLOQUE INTERVALO === */
 .interval-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
   text-align: right;
 }
 
 .interval-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: #c3cfe2;
-  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.material-symbols-rounded {
+  font-size: 20px;
+  vertical-align: middle;
 }
 
 .interval-selector {
@@ -97,6 +106,7 @@ h2 {
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  text-align: center;
 }
 
 .interval-btn.active {
@@ -104,22 +114,19 @@ h2 {
   border-color: #00e0ff;
 }
 
-.chart-card {
-  margin-top: 40px;
-  background: #10182a;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 224, 255, 0.05);
+.interval-btn small {
+  color: #a4b1c5;
 }
 
 /* === RESPONSIVO === */
 @media (max-width: 900px) {
-  .top-row {
+  .header-container {
     flex-direction: column;
     align-items: stretch;
   }
 
   .interval-block {
+    align-items: flex-start;
     text-align: left;
   }
 }

@@ -1,54 +1,42 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>BankStock AI</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-</head>
-
-<body>
-  <div class="top-row">
-    <!-- BLOQUE 1: SELECCIONAR BANCO -->
-    <div class="bank-section">
-      <h2>Seleccionar banco</h2>
-      <div class="bank-selector">
-        <div class="bank-card bbva active" id="bbvaCard" data-bank="bbva">
-          <div class="bank-icon">🏦</div>
-          <div class="bank-info">
-            <h3>BBVA</h3>
-            <p>Banco Bilbao Vizcaya Argentaria</p>
-          </div>
+<div class="header-container">
+  <!-- BLOQUE: Seleccionar banco -->
+  <div class="bank-block">
+    <h2>Seleccionar banco</h2>
+    <div class="bank-selector">
+      <div class="bank-card bbva active" id="bbvaCard" data-bank="bbva">
+        <div class="bank-icon blue">
+          <span class="material-symbols-rounded">account_balance</span>
         </div>
-
-        <div class="bank-card santander" id="santanderCard" data-bank="santander">
-          <div class="bank-icon">🏛️</div>
-          <div class="bank-info">
-            <h3>Santander</h3>
-            <p>Banco Santander</p>
-          </div>
+        <div class="bank-info">
+          <h3>BBVA</h3>
+          <p>Banco Bilbao Vizcaya Argentaria</p>
         </div>
       </div>
-    </div>
 
-    <!-- BLOQUE 2: INTERVALO TEMPORAL -->
-    <div class="interval-block">
-      <div class="interval-title">
-        <span class="icon">📅</span> Intervalo temporal
-      </div>
-      <div class="interval-selector">
-        <div class="interval-btn active" data-days="7">7 días<br><small>Una semana</small></div>
-        <div class="interval-btn" data-days="15">15 días<br><small>Dos semanas</small></div>
-        <div class="interval-btn" data-days="30">30 días<br><small>Un mes</small></div>
-        <div class="interval-btn" data-days="365">1 año<br><small>365 días</small></div>
+      <div class="bank-card santander" id="santanderCard" data-bank="santander">
+        <div class="bank-icon red">
+          <span class="material-symbols-rounded">account_balance</span>
+        </div>
+        <div class="bank-info">
+          <h3>Santander</h3>
+          <p>Banco Santander</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- CONTENIDO PRINCIPAL (donde irá el gráfico) -->
-  <div id="chart-container" class="chart-card">
-    <h3 id="chart-title">📈 Evolución de BBVA (últimos 7 días)</h3>
-    <canvas id="chartCanvas"></canvas>
+  <!-- BLOQUE: Intervalo temporal -->
+  <div class="interval-block">
+    <div class="interval-title">
+      <span class="material-symbols-rounded">calendar_month</span>
+      Intervalo temporal
+    </div>
+
+    <div class="interval-selector">
+      <div class="interval-btn active" data-days="7">7 días<br><small>Una semana</small></div>
+      <div class="interval-btn" data-days="15">15 días<br><small>Dos semanas</small></div>
+      <div class="interval-btn" data-days="30">30 días<br><small>Un mes</small></div>
+      <div class="interval-btn" data-days="365">1 año<br><small>365 días</small></div>
+    </div>
   </div>
-</body>
-</html>
+</div>

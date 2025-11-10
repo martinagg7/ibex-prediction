@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // === Lógica del gráfico ===
   function updateChart() {
-    chartTitle.textContent = `📈 Evolución de ${selectedBank.toUpperCase()} (últimos ${selectedDays} días)`;
+    chartTitle.textContent = `Evolución de ${selectedBank.toUpperCase()} (últimos ${selectedDays} días)`;
     // Aquí luego haremos fetch a la API o cambiaremos los datos del gráfico
   }
 
