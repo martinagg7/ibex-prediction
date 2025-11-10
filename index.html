@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Predicción BBVA 📈</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b132b;
+      color: #f4f4f4;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      background: #1c2541;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #3a506b;
+    }
+    pre {
+      background: #1c2541;
+      padding: 15px;
+      border-radius: 8px;
+      width: 70%;
+      margin: 20px auto;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>💶 Predicciones del modelo BBVA</h1>
+  <button onclick="predecir()">📊 Obtener predicción</button>
+  <pre id="resultado">Esperando predicción...</pre>
+
+  <script>
+    async function predecir() {
+      const url = "https://martinagg-bank-stock-api.hf.space/predict/bbva";
+      document.getElementById("resultado").textContent = "Cargando...";
+
+      try {
+        const resp = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ n_future: 3 })
+        });
+
+        const data = await resp.json();
+        document.getElementById("resultado").textContent =
+          JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById("resultado").textContent =
+          "⚠️ Error al conectar con la API\n" + error;
+      }
+    }
+  </script>
+</body>
+</html>
