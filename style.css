@@ -1,14 +1,16 @@
 /* === ESTILOS GLOBALES === */
 body {
-  background: red !important;
-}
-body {
   font-family: 'Segoe UI', sans-serif;
-  background: #0b132b;
+  /* Degradado similar al fondo de la app */
+  background: linear-gradient(180deg, #0a0f1f 0%, #0b132b 40%, #111933 100%);
   color: #f4f4f4;
   margin: 0;
   padding: 40px;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
+
 
 h2 {
   font-weight: 600;
