@@ -105,13 +105,19 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: flex-end; /* ya lo tienes, esto alinea el contenido a la derecha */
-  text-align: right;     /* este detalle centra el texto y los botones hacia la derecha */
+  text-align: left;     /* este detalle centra el texto y los botones hacia la derecha */
   gap: 10px;
 }
 
 .interval-title {
-  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-start; /* ⬅️ para que el icono y texto queden juntos a la izquierda */
+  color: #c3cfe2;
+  font-size: 15px;
 }
+
 
 
 .interval-title {
