@@ -8,54 +8,59 @@
 </head>
 
 <body>
-  <div class="top-bar">
-    <!-- BLOQUE: SELECCIONAR BANCO -->
-    <div class="bank-section">
-      <h2>Seleccionar banco</h2>
-      <div class="bank-selector">
-        <div class="bank-card bbva active" id="bbvaCard" onclick="selectBank('bbva')">
-          <div class="bank-icon blue">
-            <span class="material-symbols-rounded">account_balance</span>
+  <div class="page">
+
+    <!-- ====== SECCIÓN SUPERIOR: BANCOS + INTERVALOS ====== -->
+    <div class="top-bar">
+
+      <!-- BLOQUE: SELECCIONAR BANCO -->
+      <div class="bank-section">
+        <h2>Seleccionar banco</h2>
+        <div class="bank-selector">
+          <div class="bank-card bbva active" id="bbvaCard" onclick="selectBank('bbva')">
+            <div class="bank-icon blue">
+              <span class="material-symbols-rounded">account_balance</span>
+            </div>
+            <div class="bank-info">
+              <h3>BBVA</h3>
+              <p>Banco Bilbao Vizcaya Argentaria</p>
+            </div>
           </div>
-          <div class="bank-info">
-            <h3>BBVA</h3>
-            <p>Banco Bilbao Vizcaya Argentaria</p>
+
+          <div class="bank-card santander" id="santanderCard" onclick="selectBank('santander')">
+            <div class="bank-icon red">
+              <span class="material-symbols-rounded">account_balance</span>
+            </div>
+            <div class="bank-info">
+              <h3>Santander</h3>
+              <p>Banco Santander</p>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="bank-card santander" id="santanderCard" onclick="selectBank('santander')">
-          <div class="bank-icon red">
-            <span class="material-symbols-rounded">account_balance</span>
-          </div>
-          <div class="bank-info">
-            <h3>Santander</h3>
-            <p>Banco Santander</p>
-          </div>
+      <!-- BLOQUE: INTERVALO DE TIEMPO -->
+      <div class="interval-section">
+        <h2>
+          <span class="material-symbols-rounded">calendar_month</span>
+          Intervalo temporal
+        </h2>
+        <div class="interval-selector">
+          <div class="interval-btn active" onclick="selectInterval(this)">7 días<br><small>Una semana</small></div>
+          <div class="interval-btn" onclick="selectInterval(this)">15 días<br><small>Dos semanas</small></div>
+          <div class="interval-btn" onclick="selectInterval(this)">30 días<br><small>Un mes</small></div>
+          <div class="interval-btn" onclick="selectInterval(this)">1 año<br><small>365 días</small></div>
         </div>
       </div>
-    </div>
 
-    <!-- BLOQUE: INTERVALO -->
-    <div class="interval-section">
-      <div class="interval-title">
-        <span class="material-symbols-rounded">calendar_month</span>
-        <span>Intervalo temporal</span>
-      </div>
-      <div class="interval-selector">
-        <div class="interval-btn active" onclick="selectInterval(this)">7 días<br><small>Una semana</small></div>
-        <div class="interval-btn" onclick="selectInterval(this)">15 días<br><small>Dos semanas</small></div>
-        <div class="interval-btn" onclick="selectInterval(this)">30 días<br><small>Un mes</small></div>
-        <div class="interval-btn" onclick="selectInterval(this)">1 año<br><small>365 días</small></div>
-      </div>
-    </div>
-  </div>
+    </div> <!-- fin top-bar -->
 
 
-  <!-- ====== SECCIÓN DE ANÁLISIS DEL PRECIO ====== -->
+    <!-- ====== SECCIÓN DE ANÁLISIS DEL PRECIO ====== -->
     <div class="analysis-section">
       <div class="chart-container">
         
-        <!-- Gráfico -->
+        <!-- GRÁFICO -->
         <div class="chart-card">
           <div class="chart-header">
             <div class="chart-title">
@@ -70,7 +75,7 @@
           <div id="grafico" class="chart"></div>
         </div>
 
-        <!-- Indicadores -->
+        <!-- INDICADORES -->
         <div class="stats-panel">
           <h3>Indicadores clave</h3>
           <div class="stat"><span>Variación</span><strong id="var">--%</strong></div>
@@ -83,14 +88,11 @@
       </div>
     </div>
 
-    <!-- Librerías necesarias para el gráfico -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+  </div> <!-- fin .page -->
 
-    <!-- Tu script principal -->
-    <script src="script.js"></script>
-    
-
-    <script src="script.js"></script>
+  <!-- Librerías -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
