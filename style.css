@@ -284,3 +284,10 @@ pre {
 .stat strong {
   color: #f4f4f4;
 }
+.top-bar {
+  margin-bottom: 40px; /* separa la parte superior del gráfico */
+}
+
+.analysis-section {
+  margin-top: 0; /* el gráfico queda más cerca de los selectores */
+}
