@@ -52,8 +52,48 @@
 
   <h2 id="titulo">💶 Predicciones del modelo BBVA</h2>
   <button id="predictBtn">📊 Obtener predicción</button>
+  
   <pre id="resultado">Esperando predicción...</pre>
+  <!-- ====== SECCIÓN DE ANÁLISIS DEL PRECIO ====== -->
+    <div class="analysis-section">
+      <div class="chart-container">
+        
+        <!-- Gráfico -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title">
+              <span class="material-symbols-rounded">show_chart</span>
+              <h3>Evolución del precio</h3>
+            </div>
+            <div class="chart-info">
+              <p>Precio actual</p>
+              <h4 id="precioActual">€--</h4>
+            </div>
+          </div>
+          <div id="grafico" class="chart"></div>
+        </div>
 
-  <script src="script.js"></script>
+        <!-- Indicadores -->
+        <div class="stats-panel">
+          <h3>Indicadores clave</h3>
+          <div class="stat"><span>Variación</span><strong id="var">--%</strong></div>
+          <div class="stat"><span>Precio medio</span><strong id="mean">€--</strong></div>
+          <div class="stat"><span>Máximo</span><strong id="max">€--</strong></div>
+          <div class="stat"><span>Mínimo</span><strong id="min">€--</strong></div>
+          <div class="stat"><span>Volatilidad</span><strong id="vol">--%</strong></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Librerías necesarias para el gráfico -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+
+    <!-- Tu script principal -->
+    <script src="script.js"></script>
+    
+
+    <script src="script.js"></script>
 </body>
 </html>
