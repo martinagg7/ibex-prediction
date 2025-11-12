@@ -246,3 +246,626 @@ h2 {
     max-width: 100%;
   }
 }
+/* === PREDICCIONES IA === */
+.ai-section {
+  background: #0b132b;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.08);
+}
+
+.ai-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ai-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #00e0ff;
+}
+
+.ai-icon h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.ai-subtitle {
+  color: #9baec8;
+  font-size: 14px;
+  margin: 0;
+}
+
+.ai-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.ai-btn {
+  flex: 1;
+  border: 1px solid #1a243d;
+  background: #10182a;
+  color: #cde3f9;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-btn:hover {
+  background: #18223d;
+}
+
+.ai-btn.active {
+  background: transparent;
+  border-color: #00e0ff;
+  color: #00e0ff;
+  box-shadow: inset 0 0 10px rgba(0, 224, 255, 0.2);
+}
+
+.ai-results {
+  background: #0a1022;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.pred-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #10182a;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  color: #e5f1ff;
+}
+
+.pred-item span {
+  color: #b8c4dd;
+}
+
+.mae-card {
+  background: #0b132b;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 18px;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mae-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.mae-header h4 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.mae-icon {
+  color: #ffb703;
+}
+
+.mae-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a192f;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.mae-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.mae-title {
+  color: #c3cfe2;
+  font-size: 14px;
+  margin: 0;
+}
+
+.mae-sub {
+  color: #7a8ca3;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.mae-right h3 {
+  margin: 0;
+  font-size: 22px;
+  color: #00e0ff;
+  font-weight: 600;
+}
+
+/* 🔗 Contenedor del botón para mantener proporciones */
+.mae-link-container {
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Estilo del botón */
+.mae-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(0, 224, 255, 0.05);
+  color: #00e0ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid rgba(0, 224, 255, 0.15);
+  transition: all 0.25s ease;
+}
+
+.mae-link:hover {
+  background: rgba(0, 224, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.link-icon {
+  font-size: 17px;
+  vertical-align: middle;
+}
+/*==== SIMULADOR DE ESCENARIOS ====== */
+.simulador-section {
+  background: #0b132b; /* ✅ igual que las demás tarjetas */
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 35px;
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== HEADER ===== */
+.sim-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00e0ff;
+  margin-bottom: 15px;
+}
+
+.sim-header .sim-icon {
+  font-size: 30px;
+  color: #00e0ff; /* ✅ sin fondo */
+  background: none;
+  padding: 0;
+}
+
+.sim-header h3 {
+  color: #00e0ff;
+  margin: 0;
+  font-weight: 600;
+}
+
+.sim-header p {
+  color: #c3cfe2;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* ===== INFO BOX ===== */
+.sim-info {
+  background: #10182a;
+  color: #9db4c0;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sim-info span {
+  color: #00e0ff;
+}
+
+/* ===== SLIDER ===== */
+.sim-slider-block {
+  margin-bottom: 20px;
+}
+
+.sim-slider-block h4 {
+  color: #c3cfe2;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.slider-label {
+  color: #9db4c0;
+  font-size: 0.9rem;
+  width: 45px;
+  text-align: center;
+}
+
+/* ✅ Slider completamente blanco */
+#factorSlider {
+  flex-grow: 1;
+  appearance: none;
+  height: 6px;
+  border-radius: 5px;
+  background: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+#factorSlider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  border: 2px solid #00e0ff;
+  transition: 0.3s;
+}
+
+#factorSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #00e0ff;
+}
+
+.slider-value {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #00e0ff;
+  font-weight: 600;
+}
+
+/* ====== BLOQUE PRECIO OPEN ====== */
+.open-box {
+  background: #10182a;
+  border-radius: 10px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #c3cfe2;
+  margin-bottom: 25px;
+}
+
+.open-info h4 {
+  margin: 0;
+  font-weight: 500;
+  color: #c3cfe2;
+}
+
+.open-info p {
+  font-size: 0.85rem;
+  color: #9db4c0;
+}
+
+.open-value h3 {
+  margin: 0;
+  color: #f4f4f4; /* ✅ blanco */
+}
+
+.open-value p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.positivo {
+  color: #00e676;
+}
+
+.negativo {
+  color: #ff5252;
+}
+
+/* ====== IMPACTO ====== */
+.impact-title {
+  color: #9db4c0;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.sim-results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pred-card {
+  background: #10182a; /* ✅ mismo fondo que otros bloques internos */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f4f4f4; /* ✅ texto en blanco */
+}
+
+.pred-card strong {
+  color: #f4f4f4; /* ✅ también en blanco */
+}
+/* === BLOQUE FINAL: DOS COLUMNAS (NOTICIAS + MODELOS) === */
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.news-section,
+.modelos-section {
+  flex: 1;
+  min-width: 420px;
+  background: #0b132b;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== NOTICIAS ===== */
+
+.news-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.news-icon,
+.model-icon {
+  font-size: 28px;
+  color: #00e0ff;
+  background: rgba(0, 224, 255, 0.08);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+/* 🔹 TÍTULOS IGUALES PARA NOTICIAS Y MODELOS */
+.news-header h2,
+.model-header h2 {
+  color: #00e0ff;
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+/* 🔹 SUBTÍTULOS IGUALES PARA NOTICIAS Y MODELOS */
+.news-subtitle,
+.model-subtitle {
+  color: #9baec8;
+  font-size: 0.9rem;
+  margin: 2px 0 0;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.news-card {
+  background: #10182a;
+  border-radius: 12px;
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  border-color: #00e0ff;
+  transform: translateY(-2px);
+}
+
+.news-card h4 {
+  color: #ffffff;
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.news-card p {
+  color: #c3cfe2;
+  font-size: 0.9rem;
+  margin: 0 0 8px;
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #9baec8;
+}
+
+.news-meta a {
+  color: #00e0ff;
+  text-decoration: none;
+}
+
+.news-meta a:hover {
+  text-decoration: underline;
+}
+
+/* ===== MODELOS DE IA ===== */
+
+.model-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.model-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: #10182a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9baec8;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-btn.active {
+  background: rgba(0, 224, 255, 0.15);
+  color: #00e0ff;
+  border-color: #00e0ff;
+  box-shadow: inset 0 0 8px rgba(0, 224, 255, 0.25);
+}
+
+.model-content {
+  background: #10182a;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.model-content h3 {
+  color: #00e0ff;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.model-content ul {
+  color: #c3cfe2;
+  font-size: 0.9rem;
+  padding-left: 20px;
+}
+
+.model-note {
+  background: #0a192f;
+  color: #9baec8;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* === SECCIÓN CURVA DE TEST / VALIDACIÓN === */
+.test-section {
+  background: #0b132b; /* mismo fondo que IA, simulador, etc */
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 45px;
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.test-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.test-icon {
+  font-size: 28px;
+  color: #00e0ff;
+  background: rgba(0, 224, 255, 0.08);
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.test-header h2 {
+  color: #00e0ff;
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.test-subtitle {
+  color: #9baec8;
+  font-size: 0.9rem;
+  margin: 2px 0 0;
+}
+
+.test-chart {
+  height: 400px;
+  background: #10182a; /* cuadro más oscuro como el gráfico principal */
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 8px rgba(0, 224, 255, 0.05);
+  margin-bottom: 25px;
+}
+
+/* === BLOQUE DE INFO DE ENTRENAMIENTO (debajo del gráfico) === */
+.training-info {
+  background: #0b132b;
+  border-radius: 12px;
+  padding: 20px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.05);
+}
+
+.training-info h4 {
+  color: #00e0ff;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.training-info p {
+  color: #c3cfe2;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.training-metrics {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.metric-card {
+  background: #10182a;
+  border-radius: 10px;
+  padding: 12px 18px;
+  min-width: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 5px rgba(0, 224, 255, 0.05);
+}
+
+.metric-card span {
+  display: block;
+  color: #9baec8;
+  font-size: 0.85rem;
+}
+
+.metric-card strong {
+  color: #00e0ff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}

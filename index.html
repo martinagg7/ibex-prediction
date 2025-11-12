@@ -46,10 +46,10 @@
           Intervalo temporal
         </h2>
         <div class="interval-selector">
-          <div class="interval-btn active" onclick="selectInterval(this)">7 días<br><small>Una semana</small></div>
-          <div class="interval-btn" onclick="selectInterval(this)">15 días<br><small>Dos semanas</small></div>
-          <div class="interval-btn" onclick="selectInterval(this)">30 días<br><small>Un mes</small></div>
-          <div class="interval-btn" onclick="selectInterval(this)">1 año<br><small>365 días</small></div>
+          <div class="interval-btn active" onclick="selectInterval(this, 7)">7 días<br><small>Una semana</small></div>
+          <div class="interval-btn" onclick="selectInterval(this, 15)">15 días<br><small>Dos semanas</small></div>
+          <div class="interval-btn" onclick="selectInterval(this, 30)">30 días<br><small>Un mes</small></div>
+          <div class="interval-btn" onclick="selectInterval(this, 365)">1 año<br><small>365 días</small></div>
         </div>
       </div>
 
@@ -64,7 +64,7 @@
         <div class="chart-card">
           <div class="chart-header">
             <div class="chart-title">
-              <span class="material-symbols-rounded">show_chart</span>
+              <span id="chartIcon" class="material-symbols-rounded">show_chart</span>
               <h3>Evolución del precio</h3>
             </div>
             <div class="chart-info">
@@ -78,7 +78,7 @@
         <!-- INDICADORES -->
         <div class="stats-panel">
           <h3>Indicadores clave</h3>
-          <div class="stat"><span>Variación</span><strong id="var">--%</strong></div>
+          <div class="stat"><span>Tendencia diaria</span><strong id="var">--%</strong></div>
           <div class="stat"><span>Precio medio</span><strong id="mean">€--</strong></div>
           <div class="stat"><span>Máximo</span><strong id="max">€--</strong></div>
           <div class="stat"><span>Mínimo</span><strong id="min">€--</strong></div>
@@ -87,6 +87,150 @@
 
       </div>
     </div>
+
+    <!-- ====== SECCIÓN DE PREDICCIONES IA ====== -->
+    <section class="ai-section">
+      <div class="ai-header">
+        <div class="ai-icon">
+          <span class="material-symbols-rounded">neurology</span>
+          <h2>Predicciones IA</h2>
+        </div>
+        <p class="ai-subtitle">Modelo neuronal <span id="bancoPred">BBVA</span></p>
+      </div>
+
+      <div class="ai-controls">
+        <button class="ai-btn active" data-dias="1">1 día</button>
+        <button class="ai-btn" data-dias="2">2 días</button>
+        <button class="ai-btn" data-dias="3">3 días</button>
+      </div>
+
+      <div id="ai-results" class="ai-results">
+        <p>Selecciona un horizonte de predicción</p>
+      </div>
+    </section>
+
+    <!-- ====== SIMULADOR DE ESCENARIOS ====== -->
+    <section class="simulador-section">
+      <div class="sim-header">
+        <span class="material-symbols-rounded sim-icon">trending_up</span>
+        <div>
+          <h3>Simulador de escenarios — Precio de apertura</h3>
+          <p>Ajusta el precio de apertura y observa cómo varían las predicciones del modelo <span id="modeloSim">LSTM</span></p>
+        </div>
+      </div>
+
+      <div class="sim-info">
+        <span class="material-symbols-rounded">info</span>
+        Modifica el precio de apertura entre -50 % y +50 % para ver el impacto en las predicciones
+      </div>
+
+      <div class="sim-slider-block">
+        <h4>Variación del precio de apertura</h4>
+        <div class="slider-container">
+          <span class="slider-label">-50%</span>
+          <input type="range" id="factorSlider" min="0.5" max="1.5" step="0.1" value="1.0" />
+          <span class="slider-label">+50%</span>
+        </div>
+        <div class="slider-value" id="valorPorcentaje">+0%</div>
+      </div>
+
+      <div class="open-box">
+        <div class="open-info">
+          <h4>Precio de apertura (Open)</h4>
+          <p>Precio base para predicciones</p>
+        </div>
+        <div class="open-value">
+          <h3 id="valorOpen">€11.54</h3>
+          <p id="deltaOpen" class="positivo">+€0.00</p>
+        </div>
+      </div>
+
+      <h4 class="impact-title">Impacto en predicciones del modelo</h4>
+      <div id="simResults" class="sim-results">
+        <div class="pred-card"><span>Día 1</span><strong id="simDay1">€--</strong></div>
+        <div class="pred-card"><span>Día 2</span><strong id="simDay2">€--</strong></div>
+        <div class="pred-card"><span>Día 3</span><strong id="simDay3">€--</strong></div>
+      </div>
+    </section>
+
+    <!-- ====== BLOQUE FINAL: NOTICIAS + MODELOS ====== -->
+    <div class="bottom-section">
+      
+      <!-- 📰 NOTICIAS FINANCIERAS -->
+      <section class="news-section" id="newsSection">
+        <div class="news-header">
+          <span class="material-symbols-rounded news-icon">article</span>
+          <div>
+            <h2>Noticias financieras</h2>
+            <p class="news-subtitle">Últimas actualizaciones de <span id="bankNewsName">BBVA</span></p>
+          </div>
+        </div>
+        <div id="newsContainer" class="news-container">
+          <p class="loading-news">Cargando noticias...</p>
+        </div>
+      </section>
+
+      <!-- 🧠 MODELOS DE IA -->
+      <section class="modelos-section">
+        <div class="model-header">
+          <span class="material-symbols-rounded model-icon">neurology</span>
+          <div>
+            <h2>Modelos de IA</h2>
+            <p class="model-subtitle">Cómo funcionan nuestras predicciones</p>
+          </div>
+        </div>
+
+        <div class="model-tabs">
+          <button id="tabLSTM" class="tab-btn active">LSTM • BBVA</button>
+          <button id="tabGRU" class="tab-btn">GRU • Santander</button>
+        </div>
+
+        <div id="modelContent" class="model-content">
+          <!-- Se carga dinámicamente -->
+        </div>
+      </section>
+    </div>
+    <!-- ====== CURVA DE VALIDACIÓN ====== -->
+    <section class="test-section">
+      <div class="test-header">
+        <span class="material-symbols-rounded test-icon">timeline</span>
+        <div>
+          <h2>Curva de validación</h2>
+          <p class="test-subtitle">Comparación entre valores reales y predichos durante el entrenamiento</p>
+        </div>
+      </div>
+      <div id="curvaTest" class="test-chart"></div>
+      <div class="training-info">
+      <h4> Proceso de entrenamiento</h4>
+      <p>
+        El modelo ha sido entrenado durante 12 semanas con datos históricos del banco seleccionado.
+        Se observa una convergencia gradual del error, indicando que el modelo está aprendiendo patrones consistentes.
+      </p>
+
+      <div class="training-metrics">
+        <div class="metric-card">
+          <span>Épocas totales</span>
+          <strong>200</strong>
+        </div>
+        <div class="metric-card">
+          <span>Hidden size</span>
+          <strong>32</strong>
+        </div>
+        <div class="metric-card">
+          <span>Window size</span>
+          <strong>3</strong>
+        </div>
+        <div class="metric-card">
+          <span>Learning rate</span>
+          <strong>0.001</strong>
+        </div>
+      </div>
+    </div>
+
+    </section>
+
+
+
 
   </div> <!-- fin .page -->
 
